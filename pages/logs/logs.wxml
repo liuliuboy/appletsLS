@@ -1,0 +1,25 @@
+<!--logs.wxml-->
+<import src="../commons/newlistbox/newlistbox.wxml.wxml"/>
+<view class='logs-page'>
+  <swiper 
+    class='swiper-dom'
+    indicator-dots="true"
+    autoplay="true"
+    circular="true"
+  >
+    <swiper-item item-id="1">
+      <image src='/image/wx.png'></image>
+    </swiper-item>
+    <swiper-item item-id="2">
+      <image src='/image/iqiyi.png'></image>
+    </swiper-item>
+    <swiper-item item-id="3">
+      <image src='/image/vr.png'></image>
+    </swiper-item>
+  </swiper>
+  <view class='new-list'>
+    <view class='new-box' data-newid="{{item.postId}}" wx:for="{{dataList}}" wx:for-item="item" wx:key="idx" catchtap='pushNewInfo'>
+      <template is="NewListBox" data="{{item}}"></template>
+    </view>
+  </view>
+</view>

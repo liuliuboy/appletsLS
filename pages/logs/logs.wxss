@@ -1,0 +1,18 @@
+@import '../commons/newlistbox/newlistbox.wxml.wxss';
+.logs-page{
+  height: 100%;
+}
+
+.swiper-dom{
+  width: 100%;
+  height: 600rpx;
+}
+
+.swiper-dom image{
+  width: 750rpx;
+  height: 600rpx;
+}
+
+.new-list{
+  margin-top: 38rpx;
+}
