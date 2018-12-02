@@ -19,7 +19,7 @@
   </swiper>
   <view class='new-list'>
     <view class='new-box' data-newid="{{item.postId}}" wx:for="{{dataList}}" wx:for-item="item" wx:key="idx" catchtap='pushNewInfo'>
-      <template is="NewListBox" data="{{item}}"></template>
+      <template is="NewListBox" data="{{...item}}"></template>
     </view>
   </view>
 </view>

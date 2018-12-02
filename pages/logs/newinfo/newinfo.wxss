@@ -1,0 +1,68 @@
+/* pages/newinfo/newinfo.wxss */
+.new-info-top{
+  position: relative;
+}
+
+.new-info-top .title-img{
+  width: 750rpx;
+}
+
+.new-info-top .music-icon{
+  width: 102rpx;
+  height: 110rpx;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -51rpx;
+  margin-top: -51rpx;
+  opacity: 0.6;
+}
+
+.new-info-cen{
+  padding: 0 36rpx;
+}
+
+.new-info-cen .new-info-user{
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+}
+
+.new-info-cen .new-info-user image{
+  width: 110rpx;
+  height: 110rpx;
+  margin-right: 20rpx;
+}
+
+.new-info-cen .new-info-user .user-send{
+  margin: 0 20rpx;
+}
+
+.new-info-cen .title-box{
+  font-size: 44rpx;
+  font-weight: bold;
+  padding-top: 24px;
+  margin-bottom: 40px;
+  height: 70px;
+  border-bottom: 1px solid #e4e4e4;
+  position: relative;
+}
+
+.new-info-cen .title-box .fenxiang, .new-info-cen .title-box .shouchang{
+  width: 55px;
+  height: 55px;
+  position: absolute;
+  bottom: -25px;
+  right: 0px;
+}
+
+.new-info-cen .title-box .fenxiang{
+  right: 65px;
+}
+
+.new-info-text{
+  font-size: 30rpx;
+  text-indent: 60rpx;
+  text-align: justify;
+  padding-bottom: 12px;
+}

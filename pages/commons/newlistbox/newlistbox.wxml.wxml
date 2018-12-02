@@ -1,13 +1,13 @@
 <!--commons/newlistbox/newlistbox.wxml.wxml-->
 <template name="NewListBox">
   <view class='new-title'>
-    <image src='{{item.avatar}}'></image>
-    <text>{{item.date}}</text>
+    <image src='{{avatar}}'></image>
+    <text>{{date}}</text>
   </view>
-  <text class='new-h'>{{item.title}}</text>
-  <image class='cen-img' src='{{item.headImgSrc}}'></image>
+  <text class='new-h'>{{title}}</text>
+  <image class='cen-img' src='{{headImgSrc}}'></image>
   <view class='new-cen-box'>
-    <text class='new-cen-text'>{{item.content}}</text>
+    <text class='new-cen-text'>{{content}}</text>
   </view>
   <view class='new-bottom'>
     <view class='new-look-num'>

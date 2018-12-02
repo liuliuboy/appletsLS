@@ -1,0 +1,23 @@
+<!--pages/newinfo/newinfo.wxml-->
+<view class='new-info'>
+  <view class='new-info-top'>
+    <image class='title-img' src='{{newDatas.headImgSrc}}'></image>
+    <image class='music-icon' src='/image/music/music-start.png'></image>
+  </view>
+  <view class='new-info-cen'>
+    <view class='new-info-user'>
+      <image src='{{newDatas.avatar}}'></image>
+      <text class='user-name'>{{newDatas.author}}</text>
+      <text class='user-send'>发表于</text>
+      <text class='user-send-time'>{{newDatas.dateTime}}</text>
+    </view>
+    <view class='title-box'>
+      <text>{{newDatas.title}}</text>
+      <image class='fenxiang' src='{{collectorImg}}' catchtap='collector'></image>
+      <image class='shouchang' src='/image/icon/share.png'></image>
+    </view>
+    <view class='new-info-text'>
+      <text>{{newDatas.detail}}</text>
+    </view>
+  </view>
+</view>
