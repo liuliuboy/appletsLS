@@ -42,5 +42,26 @@ Page({
       collectorImg: collector[newId] ? '/image/icon/collection.png' : '/image/icon/collection-anti.png'
     });
     wx.setStorageSync('collector', collector);
-  }   
+    wx.showToast({
+      title: collector[newId] ? '收藏成功' : '取消成功',
+      duration: 1000
+    })
+  },
+  
+  /**
+   * 分享
+   */
+  share() {
+    wx.showActionSheet({
+      itemList: [
+        '分享给微信好友',
+        '分享到朋友圈',
+        '分享到微博'
+      ],
+      itemColor: '#405f80',
+      success: (mes) => {
+        console.log(mes);
+      }
+    })
+  }
 })

@@ -31,6 +31,5 @@ Page({
    * 点赞
    */
   addXing(event) {
-    
   }
 })

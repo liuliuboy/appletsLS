@@ -14,7 +14,7 @@
     <view class='title-box'>
       <text>{{newDatas.title}}</text>
       <image class='fenxiang' src='{{collectorImg}}' catchtap='collector'></image>
-      <image class='shouchang' src='/image/icon/share.png'></image>
+      <image class='shouchang' src='/image/icon/share.png' catchtap='share'></image>
     </view>
     <view class='new-info-text'>
       <text>{{newDatas.detail}}</text>
