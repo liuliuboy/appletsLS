@@ -1,8 +1,8 @@
 <!--pages/newinfo/newinfo.wxml-->
 <view class='new-info'>
   <view class='new-info-top'>
-    <image class='title-img' src='{{newDatas.headImgSrc}}'></image>
-    <image class='music-icon' src='/image/music/music-start.png'></image>
+    <image class='title-img' src="{{titleImg}}"></image>
+    <image class='music-icon' src="{{offMiusic ? '/image/music/music-stop.png' : '/image/music/music-start.png'}}" catchtap='onMiusicTab'></image>
   </view>
   <view class='new-info-cen'>
     <view class='new-info-user'>
@@ -13,7 +13,7 @@
     </view>
     <view class='title-box'>
       <text>{{newDatas.title}}</text>
-      <image class='fenxiang' src='{{collectorImg}}' catchtap='collector'></image>
+      <image class='fenxiang' src="{{collectorImg}}" catchtap='collector'></image>
       <image class='shouchang' src='/image/icon/share.png' catchtap='share'></image>
     </view>
     <view class='new-info-text'>

@@ -5,16 +5,14 @@ Page({
     newDatas: {}, // 点击的数据
     collectorImg: '/image/icon/collection-anti.png',
     newId: '', // 新闻ID
+    titleImg: '', // title图片
+    offMiusic: false, // 是否播放音乐
   },
 
   onLoad(option) {
     let collector = {};
     let newId = option.newId;
     let newDatas = newListData.newList || [];
-    this.setData({
-      newDatas: newDatas[newId] || {},
-      newId: newId
-    });
     collector = wx.getStorageSync('collector') || {};
     if (collector[newId.toString()]) {
       collector[newId] = true;
@@ -22,14 +20,17 @@ Page({
       collector[newId] = false;
     }
     this.setData({
-      collectorImg: collector[newId] ? '/image/icon/collection.png' : '/image/icon/collection-anti.png'
+      newDatas: newDatas[newId] || {},
+      newId: newId,
+      titleImg: newDatas[newId].headImgSrc || '',
+      collectorImg: collector[newId] ? '/image/icon/collection.png' : '/image/icon/collection-anti.png',
     });
   },
   
   /**
    * 收藏
    */
-  collector() {
+  collector(ev) {
     let newId = this.data.newId.toString();
     let collector = {};
     collector = wx.getStorageSync('collector') || {};
@@ -51,7 +52,7 @@ Page({
   /**
    * 分享
    */
-  share() {
+  share(ev) {
     wx.showActionSheet({
       itemList: [
         '分享给微信好友',
@@ -62,6 +63,51 @@ Page({
       success: (mes) => {
         console.log(mes);
       }
+    });
+  },
+  
+  /**
+   * 点击音乐
+   */
+  onMiusicTab(ev) {
+    let offMiusic = this.data.offMiusic;
+    if (offMiusic) {
+      this.stopMiusicTab();
+    } else {
+      this.playMinsicAudio();
+    }
+  },
+
+  /**
+   * 播放音乐
+   */
+  playMinsicAudio() {
+    let that = this;
+    let urlData = this.data.newDatas.music || {};
+    wx.playBackgroundAudio({
+      dataUrl: urlData.url || '',
+      title: urlData.title || '',
+      coverImgUrl: urlData.coverImg || '',
+      success: function () {
+        that.setData({
+          titleImg: urlData.coverImg || newListData.headImgSrc,
+          offMiusic: true
+        });
+      }
     })
+  },
+
+  /**
+   * 暂停音乐播放
+   */
+  stopMiusicTab() {
+    let that = this;
+    wx.pauseBackgroundAudio({
+      success: function() {
+        that.setData({
+          offMiusic: false
+        });
+      }
+    });
   }
 })
