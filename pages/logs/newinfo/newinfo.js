@@ -1,5 +1,6 @@
 // pages/newinfo/newinfo.js
 var newListData = require('../../../data/new-list.js');
+var appData = getApp(); // 获取全局变量
 Page({
   data: {
     newDatas: {}, // 点击的数据
@@ -25,6 +26,14 @@ Page({
       titleImg: newDatas[newId].headImgSrc || '',
       collectorImg: collector[newId] ? '/image/icon/collection.png' : '/image/icon/collection-anti.png',
     });
+    if (appData.glbalData.g_isPlayingMusin && appData.glbalData.g_isPlayMusinId === newId) {
+      // 音乐正在播放
+      this.palyMinsic();
+    }
+    // 监听音乐播发
+    this.onMiusicPlay();
+    // 监听音乐暂停
+    this.onMiusicStop();
   },
   
   /**
@@ -77,6 +86,21 @@ Page({
       this.playMinsicAudio();
     }
   },
+  
+  /**
+   * 播放音乐
+   */
+  palyMinsic() {
+    let urlData = this.data.newDatas.music || {};
+    let newDatas = newListData.newList || [];
+    let id = this.data.newId;
+    appData.glbalData.g_isPlayingMusin = true;
+    appData.glbalData.g_isPlayMusinId = id;
+    this.setData({
+      titleImg: urlData.coverImg || newDatas[id].headImgSrc || '',
+      offMiusic: true
+    });
+  },
 
   /**
    * 播放音乐
@@ -89,10 +113,7 @@ Page({
       title: urlData.title || '',
       coverImgUrl: urlData.coverImg || '',
       success: function () {
-        that.setData({
-          titleImg: urlData.coverImg || newListData.headImgSrc,
-          offMiusic: true
-        });
+       that.palyMinsic()
       }
     })
   },
@@ -107,7 +128,37 @@ Page({
         that.setData({
           offMiusic: false
         });
+        appData.glbalData.g_isPlayingMusin = false;
+        appData.glbalData.g_isPlayMusinId = null;
       }
     });
-  }
+  },
+
+  /**
+   * 监听音乐播放
+   */
+  onMiusicPlay() {
+    let that = this;
+    wx.onBackgroundAudioPlay(function() {
+      // 播放音乐变换背景图
+      that.palyMinsic();
+    });
+  },
+
+  /**
+   * 监听音乐暂停
+   */
+  onMiusicStop() {
+    let that = this;
+    wx.onBackgroundAudioPause(function() {
+      let newDatas = newListData.newList || [];
+      let id = that.data.newId;
+      that.setData({
+        offMiusic: false,
+        titleImg: newDatas[id].headImgSrc || '',
+      });
+      appData.glbalData.g_isPlayingMusin = false;
+      appData.glbalData.g_isPlayMusinId = null;
+    })
+  },
 })
