@@ -1,4 +1,4 @@
-@import '../commons/newlistbox/newlistbox.wxml.wxss';
+@import '../commons/newlistbox/newlistbox.wxss';
 .logs-page{
   height: 100%;
 }

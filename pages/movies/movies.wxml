@@ -1,0 +1,7 @@
+<!--pages/movies/movies.wxml-->
+<import src="/pages/commons/movielist/movielist.wxml"/>
+<view>
+  <template is="MovieList"/>
+  <template is="MovieList"/>
+  <template is="MovieList"/>
+</view>

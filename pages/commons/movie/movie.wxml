@@ -1,0 +1,8 @@
+<import src="../star/star.wxml"/>
+<template name="movie">
+  <view>
+    <!-- <image src=''></image> -->
+    <text>追龙</text>
+    <template is="StarTemplate"/>
+  </view>
+</template>

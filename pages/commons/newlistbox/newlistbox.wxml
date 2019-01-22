@@ -1,4 +1,4 @@
-<!--commons/newlistbox/newlistbox.wxml.wxml-->
+<!--commons/newlistbox/newlistbox.wxml-->
 <template name="NewListBox">
   <view class='new-title'>
     <image src='{{avatar}}'></image>

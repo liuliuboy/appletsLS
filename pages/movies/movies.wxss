@@ -1,0 +1,3 @@
+/* pages/movies/movies.wxss */
+@import '../commons/movielist/wovielist.wxss';
+@import '../commons/star/star.wxss'

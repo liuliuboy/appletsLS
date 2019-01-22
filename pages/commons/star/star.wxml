@@ -1,0 +1,10 @@
+<template name="StarTemplate">
+  <view class='star-box'>
+    <image src='/image/icon/none-star.png' data-src='/image/icon/star.png'></image>
+    <image src='/image/icon/none-star.png' data-src='/image/icon/star.png'></image>
+    <image src='/image/icon/none-star.png' data-src='/image/icon/star.png'></image>
+    <image src='/image/icon/none-star.png' data-src='/image/icon/star.png'></image>
+    <image src='/image/icon/none-star.png' data-src='/image/icon/star.png'></image>
+    <text></text>
+  </view>
+</template>

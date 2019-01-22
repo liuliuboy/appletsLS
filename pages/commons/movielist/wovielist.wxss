@@ -1,0 +1,18 @@
+.movie-list-box{
+
+}
+
+.movie-list-box .movie-tltle-box{
+  display: flex;
+  justify-content: space-between;
+}
+
+.movie-list-box .movie-tltle-box image{
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+}
+
+.movie-list-box .movie-conter-box{
+  display: flex;
+}

@@ -1,0 +1,49 @@
+/* commons/newlistbox/newlistbox.wxml.wxss */
+.new-title{
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+}
+
+.new-title image{
+  width: 100rpx;
+  height: 100rpx; 
+}
+
+.new-h{
+  font-size: 34rpx;
+  font-weight: bold;
+  padding-left: 24rpx;
+  height: 55rpx;
+  line-height: 55rpx;
+}
+
+.cen-img{
+  width: 750rpx;
+}
+
+.new-bottom{
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+}
+
+.new-bottom image{
+  width: 42rpx;
+  height: 42rpx;
+  margin: 0 12rpx;
+}
+
+.new-bottom .new-look-num{
+  display: inline-flex;
+  display: -webkit-inline-flex;
+  align-items: center;
+}
+
+.new-cen-box{
+  font-size: 30rpx;
+  text-indent: 60rpx;
+  text-align: justify;
+  line-height: 36rpx;
+  margin: 14rpx 0;
+}
