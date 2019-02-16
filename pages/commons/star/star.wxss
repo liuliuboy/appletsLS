@@ -1,4 +1,14 @@
+.star-box{
+  padding: 16rpx 0;
+}
+
 .star-box image{
-  width: 16px;
-  height: 16px;
+  width: 27rpx;
+  height: 27rpx;
+  padding-left: 3rpx;
+}
+
+.star-box .score{
+  margin-left: 24rpx;
+  font-size: 32rpx;
 }

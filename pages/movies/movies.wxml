@@ -1,7 +1,13 @@
 <!--pages/movies/movies.wxml-->
 <import src="/pages/commons/movielist/movielist.wxml"/>
-<view>
-  <template is="MovieList"/>
-  <template is="MovieList"/>
-  <template is="MovieList"/>
+<view class='movies-box'>
+  <view class='movie-list-box'>
+    <template is="MovieList"/>
+  </view>
+  <view class='movie-list-box'>
+    <template is="MovieList"/>
+  </view>
+  <view class='movie-list-box'>
+    <template is="MovieList"/>
+  </view>
 </view>

@@ -1,4 +1,5 @@
 // pages/movies/movies.js
+var appData = getApp();
 Page({
 
   /**
@@ -11,56 +12,43 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
+  onLoad (options) {
+    this.init()
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  init() {
+    this.getListData();
   },
-
+  
   /**
-   * 生命周期函数--监听页面显示
+   * 获取电影列表
    */
-  onShow: function () {
-
+  getListData() {
+    let douBanUrl = appData.glbalData.g_DouBanBase;
+    let inTheatersUrl = douBanUrl + '/v2/movie/in_theaters';
+    let comingSooUrl = douBanUrl + '/v2/movie/coming_soon';
+    let top250Url = douBanUrl + '/v2/movie/top250';
+    this.requestData(inTheatersUrl);
+    this.requestData(comingSooUrl);
+    this.requestData(top250Url);
   },
-
+  
   /**
-   * 生命周期函数--监听页面隐藏
+   * 请求函数
    */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  requestData(url = '') {
+    wx.request({
+      url: url,
+      method: 'GET',
+      header: {
+        'Content-Type': 'application/json'
+      },
+      success: (data = {}) => {
+        console.log(data);
+      },
+      fail: (err) => {
+        console.log(err);
+      }
+    })
   }
 })

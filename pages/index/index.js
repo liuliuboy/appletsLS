@@ -12,7 +12,7 @@ Page({
    * 跳转页面
    */
   linkPage(ev) {
-    wx.navigateTo({
+    wx.switchTab({
       url: '../logs/logs',
     })
   }

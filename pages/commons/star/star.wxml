@@ -5,6 +5,6 @@
     <image src='/image/icon/none-star.png' data-src='/image/icon/star.png'></image>
     <image src='/image/icon/none-star.png' data-src='/image/icon/star.png'></image>
     <image src='/image/icon/none-star.png' data-src='/image/icon/star.png'></image>
-    <text></text>
+    <text class='score'>8.9</text>
   </view>
 </template>

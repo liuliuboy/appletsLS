@@ -2,10 +2,10 @@
 <template name="MovieList">
   <view class='movie-list-box'>
     <view class='movie-tltle-box'>
-      <text>正在热映</text>
-      <view class='tltle-right-text'>
-        <text>更多</text>
-        <image src='/image/icon/arrow-right.png'></image>
+      <text class='movie-tltle-l-text'>正在热映</text>
+      <view class='tltle-right-box'>
+        <text class='tltle-r-text'>更多</text>
+        <image class='tltle-r-img' src='/image/icon/arrow-right.png'></image>
       </view>
     </view>
     <view class='movie-conter-box'>

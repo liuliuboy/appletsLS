@@ -1,0 +1,10 @@
+@import '../star/star.wxss';
+.movie-box .movie-img{
+  display: block;
+  width: 200rpx;
+  height: 270rpx;
+}
+
+.movie-box .movie-taile{
+  font-size: 34rpx;
+}
