@@ -7,3 +7,7 @@
 .movie-list-box{
   margin-bottom: 30rpx;
 }
+
+text{
+  color: #666;
+}

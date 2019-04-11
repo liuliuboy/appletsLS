@@ -1,8 +1,8 @@
 <import src="../star/star.wxml"/>
 <template name="movie">
   <view class='movie-box'>
-    <image class="movie-img" src='https://img3.doubanio.com/view/photo/l/public/p2545553064.webp'/>
-    <text class='movie-taile'>追龙</text>
-    <template is="StarTemplate"/>
+    <image class="movie-img" src='{{large}}'/>
+    <text class='movie-taile'>{{title}}</text>
+    <template is="StarTemplate" data="{{stars: startArr, average: average}}"/>
   </view>
 </template>
