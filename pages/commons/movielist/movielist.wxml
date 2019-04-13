@@ -4,7 +4,7 @@
     <view class='movie-tltle-box'>
       <text class='movie-tltle-l-text'>{{columnTitle}}</text>
       <view class='tltle-right-box'>
-        <text class='tltle-r-text' catchtap='moreMovie'>更多</text>
+        <text class='tltle-r-text' data-tltletext='{{columnTitle}}' catchtap='moreMovie'>更多</text>
         <image class='tltle-r-img' src='/image/icon/arrow-right.png'></image>
       </view>
     </view>

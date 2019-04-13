@@ -15,6 +15,24 @@ let utils = {
       }
     }
     return starsArr;
+  },
+
+  /**
+   * 请求参数
+   */
+  httpRequest: function(url="") {
+    return new Promise(function(resove, reject) {
+      wx.request({
+        url: url,
+        success: function(data) {
+          let result = data.data || {};
+          resove(result);
+        },
+        fail: function(err) {
+          reject(err)
+        }
+      })
+    });
   }
 }
 

@@ -41,21 +41,13 @@ Page({
    */
   requestData(url = '', key = '', columnTitle = '') {
     let that = this;
-    wx.request({
-      url: url,
-      method: 'GET',
-      header: {
-        'Content-Type': 'application/json'
-      },
-      success: (data = {}) => {
-        let result = data.data|| {};
-        let subjects = result.subjects || []
-        that.getListData(subjects, key, columnTitle);
-      },
-      fail: (err) => {
-        console.log(err);
-      }
-    })
+    let utilsFn = utils.utils;
+    utilsFn.httpRequest(url).then((data ={}) => {
+      let subjects = data.subjects || []
+      that.getListData(subjects, key, columnTitle);
+    }).catch((err) => {
+      console.log(err);
+    });
   },
 
   /**
@@ -90,9 +82,10 @@ Page({
   /**
    * 点击更多
    */
-  moreMovie() {
+  moreMovie(ev) {
+    let movieTitle = ev.currentTarget.dataset.tltletext || '';
     wx.navigateTo({
-      url: '/pages/more-movie/more-movie',
+      url: '/pages/more-movie/more-movie?movieTitle=' + movieTitle,
     })
   }
 })
