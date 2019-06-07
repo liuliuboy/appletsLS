@@ -1,1 +1,9 @@
-/* pages/commons/movie-grid/movie-grid.wxss */
+@import '../movie/movie.wxss';
+.grid-container {
+  height: 1300rpx;
+}
+
+.movie-grid-temlat-box {
+  float: left;
+  margin: 42rpx 16rpx 42rpx 16rpx;
+}

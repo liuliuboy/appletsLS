@@ -1,2 +1,15 @@
 <!--pages/commons/movie-grid/movie-grid.wxml-->
-<text>pages/commons/movie-grid/movie-grid.wxml</text>
+<import src="../movie/movie.wxml"/>
+<template name="MovieGridTemlat">
+  <scroll-view 
+    class='grid-container' 
+    scroll-y="true" 
+    scroll-x="false" 
+    bindscrolltolower="viewAcrollTolower">
+    <block wx:for="{{movieListData}}" wx:for-item="movieObj" wx:key="idx">
+      <view class='movie-grid-temlat-box'>
+        <template is="movie" data="{{...movieObj}}"/>
+      </view>
+    </block>
+  </scroll-view> 
+</template>

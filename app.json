@@ -6,14 +6,12 @@
     "pages/movies/movies",
     "pages/more-movie/more-movie"
   ],
-
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
   },
-
   "tabBar": {
     "borderStyle": "white",
     "list": [
@@ -30,5 +28,6 @@
         "selectedIconPath": "image/tab/dianying_hl.png"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

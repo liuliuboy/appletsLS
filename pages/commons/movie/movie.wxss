@@ -6,5 +6,5 @@
 }
 
 .movie-box .movie-taile{
-  font-size: 34rpx;
+  font-size: 28rpx;
 }

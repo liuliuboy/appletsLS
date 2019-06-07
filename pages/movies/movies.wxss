@@ -1,5 +1,5 @@
 /* pages/movies/movies.wxss */
-@import '../commons/movielist/wovielist.wxss';
+@import '../commons/movielist/movielist.wxss';
 .movies-box{
   background-color: #f2f2f2;
 }

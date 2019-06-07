@@ -1,1 +1,2 @@
 /* pages/more-movie/more-movie.wxss */
+@import '../commons/movie-grid/movie-grid.wxss';

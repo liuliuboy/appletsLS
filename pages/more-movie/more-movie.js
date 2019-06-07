@@ -10,7 +10,11 @@ Page({
     // 电影大标题
     movieTitle: '',
     // 整合的电影数据
-    movieListData: []
+    movieListData: [],
+    // 加载更多请求地址
+    reaquesturl: '',
+    // 加载更多总页数
+    allTotal: 0,
   },
 
   /**
@@ -46,7 +50,11 @@ Page({
       '即将上映': comingSooUrl,
       '豆瓣Top250': top250Url
     };
-    this.getClssMovieList(urlObj[this.data.movieTitle]);
+    let urlstr = urlObj[this.data.movieTitle] || '';
+    this.setData({
+      reaquesturl: urlstr
+    });
+    this.getClssMovieList(urlstr);
   },
   
   /**
@@ -59,8 +67,17 @@ Page({
       // 整合获取的数据
       this.getListData(result);
     }).catch((err) => {
-      console.log(err, '>>>>>>>>>>>>');
     });
+  },
+
+  /**
+   * 更多下拉加载更多
+   */
+  viewAcrollTolower(en) {
+    let requesrUrl = this.data.reaquesturl;
+    let total = this.data.allTotal;
+    let urlstr = `${requesrUrl}?start=${total}&count=20`;
+    this.getClssMovieList(urlstr);
   },
 
   /**
@@ -83,8 +100,11 @@ Page({
       };
       movieArr.push(temp);
     }
+    let total = this.data.allTotal;
+    let movieListData = this.data.movieListData;
     this.setData({
-      movieListData: movieArr
+      allTotal: movieArr.length ? total + 20 : total,
+      movieListData: [...movieListData, ...movieArr]
     });
   },
 })

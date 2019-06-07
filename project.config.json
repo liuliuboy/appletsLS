@@ -13,8 +13,10 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.2.5",
 	"appid": "wx926e6d066f96a083",
-	"projectname": "wxDom",
+	"projectname": "appletsLS",
 	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
