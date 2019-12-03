@@ -16,11 +16,11 @@
 }
 
 movie-list-box .movie-tltle-box text{
-  font-size: 34rpx;
+  font-size: 28rpx;
 }
 
 .movie-list-box .movie-tltle-box .movie-tltle-l-text, .movie-list-box .movie-tltle-box .tltle-r-text{
-  font-size: 34rpx;
+  font-size: 28rpx;
 }
 
 .movie-list-box .movie-tltle-box .tltle-r-text{

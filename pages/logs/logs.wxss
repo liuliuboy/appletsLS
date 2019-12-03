@@ -9,10 +9,18 @@
 }
 
 .swiper-dom image{
-  width: 750rpx;
+  width: 875rpx;
   height: 600rpx;
 }
 
 .new-list{
   margin-top: 38rpx;
+}
+
+.new-box{
+  padding-bottom: 18rpx;
+  border-bottom: 1px solid #e4e4e4;
+}
+.new-box:last-child{
+  border: none;
 }

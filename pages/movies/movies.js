@@ -87,5 +87,12 @@ Page({
     wx.navigateTo({
       url: '/pages/more-movie/more-movie?movieTitle=' + movieTitle,
     })
+  },
+
+  /**
+   * 搜素框
+   */
+  inputFocus(ev) {
+    
   }
 })

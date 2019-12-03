@@ -26,7 +26,7 @@ Page({
       movieTitle: tltleText,
     });
   },
-
+  
   /**
    * 页面加载完毕
    */
@@ -35,6 +35,16 @@ Page({
       title: this.data.movieTitle,
     });
     this.getMovieResuestUrl();
+  },
+
+  /**
+   * 监听下拉刷新
+   */
+  onPullDownRefresh() {
+    let requesrUrl = this.data.reaquesturl;
+    let total = this.data.allTotal;
+    let urlstr = `${requesrUrl}?start=${total}&count=20`;
+    this.getClssMovieList(urlstr);
   },
 
   /**
@@ -62,7 +72,10 @@ Page({
    */
   getClssMovieList(url) {
     let utilsFn = utils.utils;
+    wx.showNavigationBarLoading();
     utilsFn.httpRequest(url).then((data = {}) => {
+      wx.hideNavigationBarLoading();
+      wx.stopPullDownRefresh();
       let result = data.subjects || {};
       // 整合获取的数据
       this.getListData(result);

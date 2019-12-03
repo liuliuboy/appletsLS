@@ -86,7 +86,7 @@ var newListData = [{
     headImgSrc: "/image/post/vr.png",
     author: "深白色",
     date: "Nov 20 2016",
-    avatar: "../../../image/avatar/3.png",
+    avatar: "/image/avatar/3.png",
     postId: 4,
     music: {
       url: "http://music.163.com/song/media/outer/url?id=188204.mp3",
@@ -105,7 +105,7 @@ var newListData = [{
     headImgSrc: "/image/iqiyi.png",
     author: "深白色",
     date: "Nov 20 2016",
-    avatar: "../../../image/avatar/5.png",
+    avatar: "/image/avatar/5.png",
     postId: 5,
     music: {
       url: "http://music.163.com/song/media/outer/url?id=152428.mp3",

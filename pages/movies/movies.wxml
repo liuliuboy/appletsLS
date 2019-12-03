@@ -1,6 +1,10 @@
 <!--pages/movies/movies.wxml-->
 <import src="/pages/commons/movielist/movielist.wxml"/>
 <view class='movies-box'>
+  <view class="search">
+    <icon type="search" size="18" class='search-icon'></icon>
+    <input type="text" confirm-type="done" placeholder="你的名字、血战钢锯岭" class="search-box" bindfocus="inputFocus"/>
+  </view>
   <view class='movie-list-box'>
     <template is="MovieList" data='{{...comingSooData}}'/>
   </view>

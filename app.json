@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/logs/logs",
     "pages/index/index",
+    "pages/logs/logs",
     "pages/logs/newinfo/newinfo",
     "pages/movies/movies",
     "pages/more-movie/more-movie"
@@ -10,7 +10,7 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "borderStyle": "white",
