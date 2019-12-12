@@ -43,6 +43,8 @@
   display: inline-flex;
   display: -webkit-inline-flex;
   align-items: center;
+  font-size: 12px;
+  color: #333;
 }
 
 .new-cen-box{

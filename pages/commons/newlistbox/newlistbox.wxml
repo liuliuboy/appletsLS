@@ -12,11 +12,11 @@
   <view class='new-bottom'>
     <view class='new-look-num'>
       <image src='/image/icon/view.png'></image>
-      <text>{{item.reading}}</text>      
+      <text>{{reading}}</text>      
     </view>
     <view class='new-look-num' catchtap='addXing'>
       <image src='/image/icon/star.png'></image>
-      <text>{{item.collection}}</text>
+      <text>{{collection}}</text>
     </view>
   </view>
 </template>

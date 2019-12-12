@@ -34,6 +34,8 @@ Page({
     this.onMiusicPlay();
     // 监听音乐暂停
     this.onMiusicStop();
+    // 音乐播放完毕
+    this.onMiusicAudioStop();
   },
   
   /**
@@ -79,7 +81,8 @@ Page({
    * 点击音乐
    */
   onMiusicTab(ev) {
-    let offMiusic = this.data.offMiusic;
+    let {data} = this;
+    let offMiusic = data.offMiusic;
     if (offMiusic) {
       this.stopMiusicTab();
     } else {
@@ -91,9 +94,10 @@ Page({
    * 播放音乐
    */
   palyMinsic() {
-    let urlData = this.data.newDatas.music || {};
+    let {data} = this;
+    let urlData = data.newDatas.music || {};
     let newDatas = newListData.newList || [];
-    let id = this.data.newId;
+    let id = data.newId;
     appData.glbalData.g_isPlayingMusin = true;
     appData.glbalData.g_isPlayMusinId = id;
     this.setData({
@@ -161,4 +165,17 @@ Page({
       appData.glbalData.g_isPlayMusinId = null;
     })
   },
+
+  /**
+   * 监听音乐停止
+   */
+  onMiusicAudioStop() {
+    wx.onBackgroundAudioStop(() => {
+      appData.glbalData.g_isPlayingMusin = false;
+      appData.glbalData.g_isPlayMusinId = '';
+      this.setData({
+        offMiusic: false
+      });
+    });
+  }
 })

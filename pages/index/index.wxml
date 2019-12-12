@@ -1,6 +1,6 @@
 <!--pages/index/index.wxml-->
 <view class='index-page'>
   <image class='img-box' src='/image/avatar/4.png'></image>
-  <button class='btn' bindtap='linkPage'>进入详情</button>
+  <button class='btn' bind:tap='linkPage'>进入详情</button>
   <text class='text-box'>小程序之路</text>
 </view>

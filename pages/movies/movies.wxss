@@ -1,5 +1,6 @@
 /* pages/movies/movies.wxss */
 @import '../commons/movielist/movielist.wxss';
+@import '../commons/movie-grid/movie-grid.wxss';
 .movies-box{
   background-color: #f2f2f2;
 }
@@ -8,20 +9,34 @@
   margin-bottom: 30rpx;
 }
 
+.movie-list{
+  margin-top: 80rpx;
+}
+
 text{
   color: #666;
 }
 
 .search{
   display: flex;
+  background-color: #fff;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
   width: 100%;
 }
 
-.search-icon{
+.search-icon, .clear-icon{
   margin: auto 14rpx auto 20rpx;
 }
 
 .search-box{
+  width: 100%;
   height: 80rpx;
   font-size: 28rpx;
+}
+
+.search-page{
+  margin-top: 80rpx;
 }

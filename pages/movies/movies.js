@@ -9,7 +9,12 @@ Page({
   data: {
     inTheatersData: {},
     comingSooData: {},
-    top250Data: {}
+    top250Data: {},
+    // 查询的电影
+    shearchMoviesData: {},
+    // 是否显示电影查询页面
+    showSearchMoviePage: false,
+    searchVal: ''
   },
 
   /**
@@ -71,12 +76,14 @@ Page({
       };
       movieArr.push(temp);
     }
+    
     this.setData({
       [key]: {
         columnTitle: columnTitle,
         movies: movieArr
       }
     });
+    console.log(this.data.shearchMoviesData);
   },
   
   /**
@@ -92,7 +99,39 @@ Page({
   /**
    * 搜素框
    */
-  inputFocus(ev) {
-    
+  inputFocus(ev = {}) {
+    this.setData({
+      showSearchMoviePage: true
+    })
+  },
+
+  /**
+   * 关闭搜索页面
+   */
+  onClearSearchPage(ev) {
+    this.setData({
+      showSearchMoviePage: false,
+      searchVal: ''
+    })
+  },
+
+  /**
+   * 查询电影输入框的值
+   */
+  onMovieChange(ev) {
+    let val = ev.detail.value;
+    this.setData({
+      searchVal: val
+    });
+  },
+
+  /**
+   * 
+   */
+  searchMovies() {
+    let {data} = this;
+    let douBanUrl = appData.glbalData.g_DouBanBase;
+    let url = `${douBanUrl}/v2/movie/search?q=${data.searchVal}`
+    this.requestData(url, 'shearchMoviesData', '');
   }
 })

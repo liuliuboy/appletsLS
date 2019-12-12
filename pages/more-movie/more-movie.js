@@ -10,7 +10,7 @@ Page({
     // 电影大标题
     movieTitle: '',
     // 整合的电影数据
-    movieListData: [],
+    movies: [],
     // 加载更多请求地址
     reaquesturl: '',
     // 加载更多总页数
@@ -114,10 +114,10 @@ Page({
       movieArr.push(temp);
     }
     let total = this.data.allTotal;
-    let movieListData = this.data.movieListData;
+    let movieListData = this.data.movies;
     this.setData({
       allTotal: movieArr.length ? total + 20 : total,
-      movieListData: [...movieListData, ...movieArr]
+      movies: [...movieListData, ...movieArr]
     });
   },
 })

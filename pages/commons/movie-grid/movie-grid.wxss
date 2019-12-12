@@ -5,5 +5,5 @@
 
 .movie-grid-temlat-box {
   float: left;
-  margin: 42rpx 16rpx 42rpx 16rpx;
+  margin: 42rpx 24rpx 42rpx 22rpx;
 }

@@ -6,7 +6,7 @@
     scroll-y="true" 
     scroll-x="false" 
     bindscrolltolower="viewAcrollTolower">
-    <block wx:for="{{movieListData}}" wx:for-item="movieObj" wx:key="idx">
+    <block wx:for="{{movies}}" wx:for-item="movieObj" wx:key="idx">
       <view class='movie-grid-temlat-box'>
         <template is="movie" data="{{...movieObj}}"/>
       </view>

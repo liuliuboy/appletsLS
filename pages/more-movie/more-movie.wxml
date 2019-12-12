@@ -1,5 +1,5 @@
 <!--pages/more-movie/more-movie.wxml-->
 <import src="../commons/movie-grid/movie-grid.wxml"/>
 <view>
-  <template is="MovieGridTemlat" data="{{movieListData}}"/>
+  <template is="MovieGridTemlat" data="{{movies}}"/>
 </view>
