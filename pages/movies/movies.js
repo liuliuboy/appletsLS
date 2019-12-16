@@ -46,9 +46,13 @@ Page({
    */
   requestData(url = '', key = '', columnTitle = '') {
     let that = this;
-    let utilsFn = utils.utils;
-    utilsFn.httpRequest(url).then((data ={}) => {
+    let {httpRequest} = utils;
+    wx.showLoading({
+      title: '正在接收信号',
+    })
+    httpRequest(url).then((data ={}) => {
       let subjects = data.subjects || []
+      wx.hideLoading();
       that.getListData(subjects, key, columnTitle);
     }).catch((err) => {
       console.log(err);
@@ -61,6 +65,7 @@ Page({
    */
   getListData(data = [], key = '', columnTitle = '') {
     var movieArr = [];
+    let { starsImg} = utils;
     for(let k = 0; k < data.length; k++) {
       let item = data[k] || {};
       let title = item.title || '';
@@ -72,7 +77,7 @@ Page({
         average: item.rating.average,
         large: item.images.large,
         movieId: item.id,
-        startArr: utils.utils.starsImg(item.rating.stars || '00')
+        startArr: starsImg(item.rating.stars || '00')
       };
       movieArr.push(temp);
     }
@@ -83,7 +88,6 @@ Page({
         movies: movieArr
       }
     });
-    console.log(this.data.shearchMoviesData);
   },
   
   /**
@@ -133,5 +137,18 @@ Page({
     let douBanUrl = appData.glbalData.g_DouBanBase;
     let url = `${douBanUrl}/v2/movie/search?q=${data.searchVal}`
     this.requestData(url, 'shearchMoviesData', '');
+  },
+
+  /**
+   * 查看详情，获取点击电影的ID
+   * 
+   */
+  onCheckMovieInfo(ev) {
+    let currentTarget = ev.currentTarget || {};
+    let dataset = currentTarget.dataset || {};
+    let movieId = dataset.movieid || '';
+    wx.navigateTo({
+      url: `/pages/movie-detail/movie-detail?id=${movieId}`
+    })
   }
 })

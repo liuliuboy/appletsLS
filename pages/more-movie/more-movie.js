@@ -71,9 +71,9 @@ Page({
    * 获取点击的电影类的所有数据
    */
   getClssMovieList(url) {
-    let utilsFn = utils.utils;
+    let {httpRequest} = utils;
     wx.showNavigationBarLoading();
-    utilsFn.httpRequest(url).then((data = {}) => {
+    httpRequest(url).then((data = {}) => {
       wx.hideNavigationBarLoading();
       wx.stopPullDownRefresh();
       let result = data.subjects || {};
@@ -97,6 +97,7 @@ Page({
    * 整合获取的数据
    */
   getListData(data = []) {
+    let {starsImg} = utils;
     var movieArr = [];
     for (let k = 0; k < data.length; k++) {
       let item = data[k] || {};
@@ -109,7 +110,7 @@ Page({
         average: item.rating.average,
         large: item.images.large,
         movieId: item.id,
-        startArr: utils.utils.starsImg(item.rating.stars || '00')
+        startArr: starsImg(item.rating.stars || '00')
       };
       movieArr.push(temp);
     }

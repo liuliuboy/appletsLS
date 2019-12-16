@@ -38,5 +38,5 @@ text{
 }
 
 .search-page{
-  margin-top: 80rpx;
+  padding-top: 80rpx;
 }

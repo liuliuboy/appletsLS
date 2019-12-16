@@ -91,6 +91,20 @@ Page({
   },
   
   /**
+   * 音乐停止函数
+   */
+  minsicStop() {
+    let newDatas = newListData.newList || [];
+    let id = this.data.newId;
+    this.setData({
+      offMiusic: false,
+      titleImg: newDatas[id].headImgSrc || '',
+    });
+    appData.glbalData.g_isPlayingMusin = false;
+    appData.glbalData.g_isPlayMusinId = null;
+  },
+
+  /**
    * 播放音乐
    */
   palyMinsic() {
@@ -153,16 +167,8 @@ Page({
    * 监听音乐暂停
    */
   onMiusicStop() {
-    let that = this;
-    wx.onBackgroundAudioPause(function() {
-      let newDatas = newListData.newList || [];
-      let id = that.data.newId;
-      that.setData({
-        offMiusic: false,
-        titleImg: newDatas[id].headImgSrc || '',
-      });
-      appData.glbalData.g_isPlayingMusin = false;
-      appData.glbalData.g_isPlayMusinId = null;
+    wx.onBackgroundAudioPause(() => {
+      this.minsicStop();
     })
   },
 
@@ -171,11 +177,7 @@ Page({
    */
   onMiusicAudioStop() {
     wx.onBackgroundAudioStop(() => {
-      appData.glbalData.g_isPlayingMusin = false;
-      appData.glbalData.g_isPlayMusinId = '';
-      this.setData({
-        offMiusic: false
-      });
+      this.minsicStop();
     });
   }
 })
