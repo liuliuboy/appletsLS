@@ -1,4 +1,7 @@
 @import '../star/star.wxss';
+.movie-box{
+  width: 200rpx;
+}
 .movie-box .movie-img{
   display: block;
   width: 200rpx;

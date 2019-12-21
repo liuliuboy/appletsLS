@@ -1,7 +1,8 @@
-.star-box{
-  padding: 16rpx 0;
+.star-box {
+  display: flex;
+  justify-items: center;
+  align-items: center;
 }
-
 .star-box image{
   width: 27rpx;
   height: 27rpx;
@@ -9,6 +10,6 @@
 }
 
 .star-box .score{
-  margin-left: 24rpx;
-  font-size: 32rpx;
+  margin-left: 14rpx;
+  font-size: 28rpx;
 }

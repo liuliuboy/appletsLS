@@ -1,3 +1,53 @@
+<import src="../commons/star/star.wxml"/>
 <view>
-  <image class="head-img" src="{{movieInfo.movieImg || ''}}" mode="aspectFill"/>
+  <view class="movie-head">
+    <image class="head-img" src="{{movieInfo.movieImg || ''}}" mode="aspectFill"/>
+    <view class="movie-title">
+      <text class="movie-title-text">{{movieInfo.title}}</text>
+      <text class="movie-country">{{movieInfo.country}} · {{movieInfo.year}}</text>
+      <view class="look-back">
+        <text class="count">{{movieInfo.wishCount}}</text>
+        <text>人喜欢</text>
+        <text class="count">{{movieInfo.commentCount}}</text>
+        <text>条评论</text>
+      </view>
+    </view>
+  </view>
+  <view class="movie-info-conter">
+    <image class="movie-img" src="{{movieInfo.movieImg}}"/>
+    <view class="movie-title-box movie-info-title">
+      <text class="movie-title">{{movieInfo.originalTitle}}</text>
+    </view>
+    <view class="score movie-info-title">
+      <text class="movie-info-title-text">评分</text>
+      <template is="StarTemplate" data="{{stars: movieInfo.stars, average: movieInfo.score}}"></template>
+    </view>
+    <view class="director movie-info-title">
+      <text class="movie-info-title-text">导演</text>
+      <text>{{movieInfo.director.name}}</text>
+    </view>
+    <view class="shadowman movie-info-title">
+      <text class="movie-info-title-text">影人</text>
+      <text>{{movieInfo.casts}}</text>
+    </view>
+    <view class="types movie-info-title">
+      <text class="movie-info-title-text">类型</text>
+      <text>{{movieInfo.generes}}</text>
+    </view>
+  </view>
+  <view class="movie-introduction">
+    <text class="movie-info-title">剧情简介</text>
+    <text class="movie-summary">{{movieInfo.summary}}</text>
+  </view>
+  <view class="shadowman-info-box">
+    <text class="movie-info-title">影人</text>
+    <view class="shadowman-scoll-view">
+      <scroll-view class="scroll-box" scroll-x="true">
+        <view class="shadowman-item" wx:for="{{movieInfo.castsInfo}}" wx:item="item" wx:key="index">
+          <image class="shadowman-img" src="{{item.img}}"></image>
+          <text class="shadowman-name">{{item.name || ''}}</text>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
 </view>

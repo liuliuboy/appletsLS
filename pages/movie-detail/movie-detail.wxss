@@ -1,5 +1,112 @@
 /* pages/movie-detail/movie-detail.wxss */
-.head-img{
+@import '../commons/star/star.wxss';
+.movie-head{
+  height: 320rpx;
+  overflow: hidden;
+  position: relative;
+}
+.movie-head .head-img{
   width: 100%;
   height: 320rpx;
+  filter: blur(20px)
+}
+.movie-head .movie-title{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 24px;
+  left: 24px;
+}
+.movie-head .movie-title .movie-title-text{
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 19px;
+  color: #fff;
+}
+.movie-head .movie-country{
+  color: #fff;
+  padding: 48rpx 0;
+  font-size: 16px;
+}
+.movie-head .look-back{
+  font-size: 14px;
+  color: #999;
+}
+.movie-head .look-back .count{
+  padding-right: 4px;
+  color: rgb(248, 134, 134);
+}
+.movie-head .look-back .count:nth-child(3){
+  margin-left: 40rpx;
+}
+.movie-info-conter{
+  position: relative;
+}
+.movie-info-conter .movie-img{
+  position: absolute;
+  bottom: 80%;
+  right: 5%;
+  width: 157rpx;
+  height: 238rpx;
+  z-index: 1;
+}
+.movie-info-conter, .movie-introduction, .shadowman-info-box{
+  padding: 28rpx 36rpx 40rpx;
+  border-bottom: 1px solid #d9d9d9;
+}
+.shadowman-info-box{
+  border: none;
+}
+.movie-info-title{
+  font-size: 14px;
+  color: #bbb7b7;
+}
+.movie-info-conter .movie-title-box{
+  font-size: 16px;
+  color: #bebcbc;
+  font-weight: 700;
+  padding: 12rpx 0;
+}
+.score, .score .star-box {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  padding: 0;
+}
+.movie-info-title-text {
+  margin-right: 24rpx;
+  font-size: 14px;
+  color: #d3d3d3;
+}
+.movie-introduction .movie-summary{
+  font-size: 14px;
+  display: block;
+  line-height: 40rpx;
+  letter-spacing: 1px;
+  margin-top: 20rpx;
+  word-break: break-all;
+  color: #bbb7b7;
+}
+.shadowman-scoll-view{
+  margin-top: 20rpx;
+}
+.shadowman-scoll-view .scroll-box{
+  width: 100%;
+  white-space: nowrap;
+}
+.shadowman-scoll-view .shadowman-item{
+  display: inline-flex;
+  width: 170rpx;
+  flex-direction: column;
+  margin-right: 20rpx;
+  justify-items: center;
+  align-items: center;
+  font-size: 24rpx;
+  color: #bbb7b7;
+  text-align: center;
+  white-space: normal;
+}
+.shadowman-item .shadowman-img{
+  width: 170rpx;
+  height: 210rpx;
 }
