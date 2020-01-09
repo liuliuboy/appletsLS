@@ -1,0 +1,12 @@
+
+var filterBrCode = function(str = '') {
+  if(!str) {
+    return str;
+  }
+  var reg = getRegExp('\\\\n', 'g')
+  return str.replace(reg, '\n');
+};
+
+module.exports = {
+  filterBrCode: filterBrCode
+}

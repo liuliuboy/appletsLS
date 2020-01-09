@@ -1,4 +1,5 @@
 <import src="../commons/star/star.wxml"/>
+<wxs src="../../utils/util.wxs" module="utilWxs"/>
 <view>
   <view class="movie-head">
     <image class="head-img" src="{{movieInfo.movieImg || ''}}" mode="aspectFill"/>
@@ -37,7 +38,7 @@
   </view>
   <view class="movie-introduction">
     <text class="movie-info-title">剧情简介</text>
-    <text class="movie-summary">{{movieInfo.summary}}</text>
+    <text class="movie-summary">{{utilWxs.filterBrCode(movieInfo.summary)}}</text>
   </view>
   <view class="shadowman-info-box">
     <text class="movie-info-title">影人</text>

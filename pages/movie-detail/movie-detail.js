@@ -68,6 +68,5 @@ Page({
     this.setData({
       movieInfo: movie
     })
-    console.log(this.data.movieInfo, '++++++++');
   }
 })

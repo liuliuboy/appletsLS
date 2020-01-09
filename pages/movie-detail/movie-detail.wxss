@@ -85,6 +85,8 @@
   letter-spacing: 1px;
   margin-top: 20rpx;
   word-break: break-all;
+  text-indent: 28px;
+  text-align: left;
   color: #bbb7b7;
 }
 .shadowman-scoll-view{
